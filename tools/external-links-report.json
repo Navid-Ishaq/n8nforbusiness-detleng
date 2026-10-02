@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://lfds.detleng.com/",
+    "status": 200,
+    "title": "LFDS | Logic First Digital Solutions",
+    "finalUrl": "https://lfds.detleng.com/"
+  },
+  {
+    "url": "https://n8n.detleng.com/",
+    "status": 200,
+    "title": "n8n Detleng — AI Automation Engineering",
+    "finalUrl": "https://n8n.detleng.com/"
+  },
+  {
+    "url": "https://n8nlab.detleng.com/",
+    "status": 200,
+    "title": "DeTLeng n8n Lab — The Thinking Behind the Workflow",
+    "finalUrl": "https://n8nlab.detleng.com/"
+  },
+  {
+    "url": "https://ops.detleng.com/",
+    "status": 200,
+    "title": "DeTLeng Ops — AI Operations & Automation Systems",
+    "finalUrl": "https://ops.detleng.com/"
+  }
+]

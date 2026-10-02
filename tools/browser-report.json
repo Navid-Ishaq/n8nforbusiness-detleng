@@ -1,0 +1,101 @@
+{
+  "checks": [
+    {
+      "width": 1920,
+      "overflow": false,
+      "bodySize": "22px",
+      "heroSize": "82px",
+      "clipped": []
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "bodySize": "22px",
+      "heroSize": "77.76px",
+      "clipped": []
+    },
+    {
+      "width": 1280,
+      "overflow": false,
+      "bodySize": "22px",
+      "heroSize": "69.12px",
+      "clipped": []
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "bodySize": "22px",
+      "heroSize": "55.296px",
+      "clipped": []
+    },
+    {
+      "width": 980,
+      "overflow": false,
+      "bodySize": "21px",
+      "heroSize": "60px",
+      "clipped": []
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "bodySize": "21px",
+      "heroSize": "60px",
+      "clipped": []
+    },
+    {
+      "width": 760,
+      "overflow": false,
+      "bodySize": "20px",
+      "heroSize": "60px",
+      "clipped": []
+    },
+    {
+      "width": 430,
+      "overflow": false,
+      "bodySize": "20px",
+      "heroSize": "43px",
+      "clipped": []
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "bodySize": "20px",
+      "heroSize": "43px",
+      "clipped": []
+    },
+    {
+      "width": 375,
+      "overflow": false,
+      "bodySize": "20px",
+      "heroSize": "42px",
+      "clipped": []
+    },
+    {
+      "width": 360,
+      "overflow": false,
+      "bodySize": "20px",
+      "heroSize": "42px",
+      "clipped": []
+    },
+    {
+      "width": 320,
+      "overflow": false,
+      "bodySize": "20px",
+      "heroSize": "42px",
+      "clipped": []
+    }
+  ],
+  "errors": [],
+  "allInternalAnchorsValid": true,
+  "renderedBlocks": 1669,
+  "menuKeyboardAndEscape": true,
+  "contentsSearch": true,
+  "mobileContents": true,
+  "readingProgress": "100% through the guide",
+  "lfds": {
+    "href": "https://lfds.detleng.com/",
+    "target": "_blank",
+    "rel": "noopener noreferrer"
+  },
+  "lfdsPopupUrl": "https://lfds.detleng.com/"
+}

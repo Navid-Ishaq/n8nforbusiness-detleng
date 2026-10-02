@@ -1,0 +1,65 @@
+[
+  {
+    "label": "Body",
+    "foreground": "#1b303a",
+    "background": "#fffdfa",
+    "ratio": 13.51,
+    "normal_text_AA": true
+  },
+  {
+    "label": "Primary CTA",
+    "foreground": "#ffffff",
+    "background": "#c8462b",
+    "ratio": 4.81,
+    "normal_text_AA": true
+  },
+  {
+    "label": "Teal heading",
+    "foreground": "#087b76",
+    "background": "#fffdfa",
+    "ratio": 5.04,
+    "normal_text_AA": true
+  },
+  {
+    "label": "Node label",
+    "foreground": "#146a5d",
+    "background": "#e7f3ee",
+    "ratio": 5.68,
+    "normal_text_AA": true
+  },
+  {
+    "label": "TOC",
+    "foreground": "#37525e",
+    "background": "#fffdfa",
+    "ratio": 8.17,
+    "normal_text_AA": true
+  },
+  {
+    "label": "Before label",
+    "foreground": "#8f4c13",
+    "background": "#fff8ec",
+    "ratio": 6.19,
+    "normal_text_AA": true
+  },
+  {
+    "label": "After label",
+    "foreground": "#146756",
+    "background": "#f0f9f2",
+    "ratio": 6.29,
+    "normal_text_AA": true
+  },
+  {
+    "label": "Footer legal note",
+    "foreground": "#415b63",
+    "background": "#fffdfa",
+    "ratio": 7.13,
+    "normal_text_AA": true
+  },
+  {
+    "label": "Journey label",
+    "foreground": "#855413",
+    "background": "#f7f3eb",
+    "ratio": 5.79,
+    "normal_text_AA": true
+  }
+]
