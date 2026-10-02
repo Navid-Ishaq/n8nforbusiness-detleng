@@ -1,0 +1,29 @@
+{
+  "reason": "User confirmed the opening LFDS card proposal was accidental and requested removal from the website. DOCX stays untouched.",
+  "excluded_blocks": [
+    {
+      "source_index": 0,
+      "text": "LFDS mein isko kis naam se card dena chahiye"
+    },
+    {
+      "source_index": 1,
+      "text": "Current cards bohat clean hain. Mere hisaab se new card aise ho:"
+    },
+    {
+      "source_index": 2,
+      "text": "SELL / BUSINESS"
+    },
+    {
+      "source_index": 3,
+      "text": "n8n for Business"
+    },
+    {
+      "source_index": 4,
+      "text": "Turn practical n8n workflows into clear business offers, client solutions, and professional automation services."
+    },
+    {
+      "source_index": 5,
+      "text": "n8nforbusiness.detleng.com"
+    }
+  ]
+}

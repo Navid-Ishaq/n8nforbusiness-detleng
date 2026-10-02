@@ -87,7 +87,7 @@
   ],
   "errors": [],
   "allInternalAnchorsValid": true,
-  "renderedBlocks": 1669,
+  "renderedBlocks": 1663,
   "menuKeyboardAndEscape": true,
   "contentsSearch": true,
   "mobileContents": true,
@@ -97,5 +97,33 @@
     "target": "_blank",
     "rel": "noopener noreferrer"
   },
-  "lfdsPopupUrl": "https://lfds.detleng.com/"
+  "lfdsPopupUrl": "https://lfds.detleng.com/",
+  "cleanupChecks": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "blocks": 1663,
+      "allAnchors": true
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "blocks": 1663,
+      "allAnchors": true
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "blocks": 1663,
+      "allAnchors": true
+    },
+    {
+      "width": 320,
+      "overflow": false,
+      "blocks": 1663,
+      "allAnchors": true
+    }
+  ],
+  "remainingRomanUrduCandidates": 0,
+  "existingAnchorsPreserved": true
 }

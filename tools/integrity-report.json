@@ -1,6 +1,8 @@
 {
-  "source_blocks": 1669,
-  "website_blocks": 1669,
+  "original_source_blocks": 1669,
+  "user_approved_excluded_blocks": 6,
+  "source_blocks": 1663,
+  "website_blocks": 1663,
   "missing_blocks": 0,
   "all_blocks_in_original_order": true,
   "beginning_middle_final_verified": true,

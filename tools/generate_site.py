@@ -37,6 +37,9 @@ with zipfile.ZipFile(SOURCE) as z:
   level=int(outline.get('{'+NS['w']+'}val')) if outline is not None else None
   rows.append({'text':text,'rich':rich,'level':level,'bold':p.find('.//w:b',NS) is not None})
 base=next(i for i,r in enumerate(rows) if r['text']=='How to Sell n8n Workflows')
+policy=json.loads((ROOT/'tools/content-exclusions.json').read_text(encoding='utf8'))
+excluded={b['source_index'] for b in policy['excluded_blocks']}
+for b in policy['excluded_blocks']:assert rows[b['source_index']]['text']==b['text'],'Excluded source block changed; review required'
 headings=[(i,r['text']) for i,r in enumerate(rows) if r['level']==0]
 heading_map={text:f'source-{i}' for i,text in headings}
 def anchor(text):return '#'+heading_map[text]
@@ -52,6 +55,7 @@ before_starts={777:'before',784:'after',132:'before',142:'after',545:'before',55
 before_starts={k+base:v for k,v in before_starts.items()}
 before_ends={x+base for x in (141,157,549,556,783,792)}
 for i,r in enumerate(rows):
+ if i in excluded:continue
  j=i-base
  lvl=r['level'];tag='h2' if lvl==0 else 'h3' if lvl is not None and lvl<9 else 'p'
  if lvl==0:
@@ -88,7 +92,7 @@ page='''<!doctype html>
 <section class="ecosystem"><div class="shell"><div class="ecosystem-heading"><div><p class="eyebrow">PART OF THE DETLENG AUTOMATION ECOSYSTEM</p><h2>One connected journey.</h2></div><a class="button secondary" href="https://lfds.detleng.com/" target="_blank" rel="noopener noreferrer" aria-label="Explore LFDS (opens in a new tab)">Explore LFDS ↗</a></div><div class="ecosystem-grid"><a href="https://n8n.detleng.com/" target="_blank" rel="noopener noreferrer"><span>LEARN ↗</span><strong>n8n DeTLeng</strong><small>Build practical understanding.</small></a><a href="https://n8nlab.detleng.com/" target="_blank" rel="noopener noreferrer"><span>BUILD / EXPLAIN ↗</span><strong>DeTLeng n8n Lab</strong><small>Follow the thinking behind the work.</small></a><a href="https://ops.detleng.com/" target="_blank" rel="noopener noreferrer"><span>SHOW ↗</span><strong>DeTLeng Ops</strong><small>Explore architecture and project evidence.</small></a></div></div></section></main>
 <footer><div class="shell"><div class="footer-grid"><div class="footer-identity"><strong>n8n for Business</strong><p>How to Sell n8n Workflows</p><p class="footer-principle">Turn workflows into business value.</p><a href="https://lfds.detleng.com/" target="_blank" rel="noopener noreferrer">LFDS — Logic First Digital Solutions ↗</a></div><div class="attribution"><p>AI-Generated, Human-Curated Content</p><strong>Muhammad Naveed Ishaque</strong><p>Business &amp; Education Solutions Provider</p></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> DeTLeng</span><a href="https://n8nforbusiness.detleng.com/">n8nforbusiness.detleng.com</a><a href="#top">Back to top ↑</a></div><p class="independent">Independent educational and business resource. Not affiliated with n8n GmbH.</p></div></footer></body></html>'''
 (ROOT/'index.html').write_text(page,encoding='utf8')
-manifest={'source':str(SOURCE),'sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),'source_blocks':len(rows),'raw_paragraphs':len(ps),'blocks':[r['text'] for r in rows]}
+manifest={'source':str(SOURCE),'sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),'source_blocks':len(rows),'raw_paragraphs':len(ps),'approved_exclusions':len(excluded),'website_blocks':len(rows)-len(excluded),'blocks':[r['text'] for r in rows]}
 (ROOT/'tools/source-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
 cn=ROOT/'CNAME'
 if cn.exists():assert cn.read_text().strip()=='n8nforbusiness.detleng.com'

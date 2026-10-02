@@ -30,6 +30,11 @@ def verify(browser_file=None):
     elif tag=='tab':text+='\t'
     elif tag in ('br','cr'):text+='\n'
    if text.strip():blocks.append(text)
+ original_count=len(blocks)
+ policy=json.loads((ROOT/'tools/content-exclusions.json').read_text(encoding='utf8'))
+ excluded={b['source_index'] for b in policy['excluded_blocks']}
+ for b in policy['excluded_blocks']:assert blocks[b['source_index']]==b['text'],'Excluded source block changed; review required'
+ blocks=[text for i,text in enumerate(blocks) if i not in excluded]
  parser=Site();parser.feed((ROOT/'index.html').read_text(encoding='utf8'))
  for target in [parser.blocks]+([json.loads(Path(browser_file).read_text(encoding='utf8'))] if browser_file else []):
   assert len(blocks)==len(target),(len(blocks),len(target))
@@ -39,7 +44,7 @@ def verify(browser_file=None):
   if href.startswith('#'):assert href[1:] in parser.ids,href
   if a.get('target')=='_blank':assert {'noopener','noreferrer'}<=set(a.get('rel','').split()),a
  assert (ROOT/'CNAME').read_text().strip()=='n8nforbusiness.detleng.com'
- result={'source_blocks':len(blocks),'website_blocks':len(parser.blocks),'missing_blocks':0,'all_blocks_in_original_order':True,'beginning_middle_final_verified':True,'all_examples_lists_quotes_and_node_explanations_compared':True,'source_docx_sha256_unchanged':True,'source_sha256':manifest['sha256'],'rendered_browser_text_verified':bool(browser_file),'internal_anchor_links_verified':sum(a.get('href','').startswith('#') for a in parser.links),'cname':'n8nforbusiness.detleng.com'}
+ result={'original_source_blocks':original_count,'user_approved_excluded_blocks':len(excluded),'source_blocks':len(blocks),'website_blocks':len(parser.blocks),'missing_blocks':0,'all_blocks_in_original_order':True,'beginning_middle_final_verified':True,'all_examples_lists_quotes_and_node_explanations_compared':True,'source_docx_sha256_unchanged':True,'source_sha256':manifest['sha256'],'rendered_browser_text_verified':bool(browser_file),'internal_anchor_links_verified':sum(a.get('href','').startswith('#') for a in parser.links),'cname':'n8nforbusiness.detleng.com'}
  (ROOT/'tools/integrity-report.json').write_text(json.dumps(result,indent=2),encoding='utf8');return result
 if __name__=='__main__':
  import sys

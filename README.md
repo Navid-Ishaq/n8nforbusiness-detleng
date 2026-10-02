@@ -13,8 +13,9 @@ A warm white editorial guide with coral, deep navy and teal. A custom typographi
 - `CNAME`: n8nforbusiness.detleng.com.
 - `.nojekyll`: serve static assets directly through GitHub Pages.
 - `tools/generate_site.py`: rebuild source HTML from the authoritative DOCX without modifying it.
+- `tools/content-exclusions.json`: the six exact user-approved accidental blocks.
 - `tools/verify_content.py`: independent source extraction, hash validation and ordered HTML/browser text comparison.
-- `tools/source-manifest.json`: source blocks and original DOCX hash.
+- `tools/source-manifest.json`: source blocks, approved exclusion count and original DOCX hash.
 - `tools/integrity-report.json`, `tools/browser-report.json`, `tools/external-links-report.json`, `tools/contrast-report.json`: local QA results.
 
 ## Preview / GitHub Pages
@@ -23,7 +24,7 @@ Open `index.html` directly or serve this folder using any static HTTP server. Th
 The initial local project folder was empty, with no CNAME, README or `.git`. A correct local CNAME was created. No remote file was altered. No commit, push, PR or deployment was performed.
 
 ## Content integrity
-The latest authoritative source is `D:\Web-Sites-Ideas\02 Sell n8n Workflows.docx`. It includes six opening notes about an LFDS ecosystem card, which are retained before the teaching article, followed by every paragraph in its original order. There are 1,669 meaningful blocks; empty spacing paragraphs are excluded. Line breaks, punctuation, quotations, examples, lists, subheadings and final sections are preserved. The source DOCX is never written by either development tool.
+The latest authoritative source is `D:\Web-Sites-Ideas\02 Sell n8n Workflows.docx`. The user confirmed the six opening LFDS card-proposal notes were accidental and approved their exclusion. `tools/content-exclusions.json` records those exact six blocks, preventing silent exclusions or reintroduction. All 1,663 teaching blocks remain in their original order; the untouched DOCX contains 1,669 meaningful blocks total. Empty spacing paragraphs are excluded from counts. Line breaks, punctuation, quotations, examples, lists, subheadings and final sections are preserved. The source DOCX is never written by either development tool.
 
 Repeat the check with `python tools/verify_content.py`. To additionally compare rendered browser content, supply a JSON array of strings as the first argument. Each string must be the `innerText` of a `[data-source-block]` element in document order.
 
